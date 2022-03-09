@@ -17,7 +17,10 @@ console.log('Attemptin to deploy contract from : ', accounts[0]);
 const result   = await new  web3.eth.Contract(JSON.parse(interface)).
                               deploy({data : bytecode, arguments : ['Hi there']}).
                               send({gas : '1000000', from : accounts[0]});
-//console.log('Contract was deploy at ', result.options.adress);
+
+console.log(result);
+console.log('Contract was deploy at ', result.options.adress);
+provider.engine.stop();
 }
 
 deploy();
